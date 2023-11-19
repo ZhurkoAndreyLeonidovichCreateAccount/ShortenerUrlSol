@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ShortenerUrl.BLL.Models.ShortendUrlView>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+@if (ViewData["Error"] != null)
+{
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item text-danger">@ViewData["Error"]</li>
+    </ul>
+}
+
+<form asp-action="Create">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Enter URL</label>
+        <input name="longUrl" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LongUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfCreation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfTransitions)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LongUrl)
+            </td>
+            <td>
+                    <a asp-action="GoToSite" asp-route-code="@item.Code">@Html.DisplayFor(modelItem => item.ShortUrl)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfCreation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfTransitions)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
