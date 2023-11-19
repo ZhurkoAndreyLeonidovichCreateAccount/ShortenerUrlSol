@@ -18,9 +18,9 @@ namespace ShortenerUrl.DAL.Repository
             var shortends = await FindAll(trackChanges).OrderBy(s=>s.DateOfCreation).ToListAsync();
             return shortends;
         }
-        public async Task CreateShortendUrlAsync(ShortendUrl shortend) => await Create(shortend);
-        public async Task DeleteShortendUrlAsync(ShortendUrl shortend) => await Delete(shortend);
-        public async Task UpdateShortendUrlAsync(ShortendUrl shortend) => await Update(shortend);
+        public async Task CreateShortendUrlAsync(ShortendUrl shortend) => await CreateAsync(shortend);
+        public async Task DeleteShortendUrlAsync(ShortendUrl shortend) => await DeleteAsync(shortend);
+        public async Task UpdateShortendUrlAsync(ShortendUrl shortend) => await UpdateAsync(shortend);
 
 
 

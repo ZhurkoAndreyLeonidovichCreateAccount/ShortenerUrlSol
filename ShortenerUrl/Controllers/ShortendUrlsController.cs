@@ -31,13 +31,13 @@ namespace ShortenerUrlBLL.Controllers
 
         
 
-        // GET: ShortendUrls/Create
+        // GET: ShortendUrls/CreateAsync
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: ShortendUrls/Create
+        // POST: ShortendUrls/CreateAsync
        
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -87,7 +87,7 @@ namespace ShortenerUrlBLL.Controllers
 
         }
 
-        //GET: ShortendUrls/Delete/5
+        //GET: ShortendUrls/DeleteAsync/5
         public async Task<IActionResult> Delete(int id)
         {
        
@@ -100,7 +100,7 @@ namespace ShortenerUrlBLL.Controllers
             return View(shortendUrl);
         }
 
-        // POST: ShortendUrls/Delete/5
+        // POST: ShortendUrls/DeleteAsync/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

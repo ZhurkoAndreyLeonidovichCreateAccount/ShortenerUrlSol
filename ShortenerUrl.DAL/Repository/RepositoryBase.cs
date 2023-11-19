@@ -28,17 +28,17 @@ namespace ShortenerUrl.DAL.Repository
         }
         
 
-        public async Task Create(T entity) 
+        public async Task CreateAsync(T entity) 
         {   
             context.Set<T>().Add(entity);
             await context.SaveChangesAsync();              
         }
-        public async Task Update(T entity) 
+        public async Task UpdateAsync(T entity) 
         {     
            context.Set<T>().Update(entity);
            await context.SaveChangesAsync();                        
         }
-        public async Task Delete(T entity) 
+        public async Task DeleteAsync(T entity) 
         {     
            context.Set<T>().Remove(entity);
            await context.SaveChangesAsync();     

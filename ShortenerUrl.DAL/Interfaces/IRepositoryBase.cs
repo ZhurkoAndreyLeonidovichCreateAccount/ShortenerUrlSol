@@ -7,9 +7,9 @@ namespace ShortenerUrl.DAL.Interfaces
         IQueryable<T> FindAll(bool trackChanges);
         IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression,
         bool trackChanges);
-        Task Create(T entity);
-        Task Update(T entity);
-        Task Delete(T entity);
+        Task CreateAsync(T entity);
+        Task UpdateAsync(T entity);
+        Task DeleteAsync(T entity);
 
         
 
