@@ -10,7 +10,6 @@ namespace ShortenerUrl.DAL.Data
     {
         public DbSet<ShortendUrl> ShortendUrls { get; set; }
         
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
         {

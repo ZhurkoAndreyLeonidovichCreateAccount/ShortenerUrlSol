@@ -6,6 +6,8 @@ using ShortenerUrl.BLL.Services;
 using ShortenerUrl.DAL.Data;
 using ShortenerUrl.DAL.Interfaces;
 using ShortenerUrl.DAL.Repository;
+using ShortenerUrl.DAL.Services;
+using System.Diagnostics.CodeAnalysis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,7 @@ builder.Services.AddScoped<IShortendUrlRepository, ShortendUrlRepository>();
 builder.Services.AddScoped<UrlShorteningProvider>();
 builder.Services.AddScoped<IServiceShortenerUrl, ServiceShortenerUrl>();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddHostedService<AppDbInitializingService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -56,3 +59,5 @@ app.UseEndpoints(endpoints =>
 });
 
 app.Run();
+
+

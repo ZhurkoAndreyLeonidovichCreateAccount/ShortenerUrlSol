@@ -48,7 +48,7 @@ namespace ShortenerUrl.DAL.Migrations
                     b.HasIndex("LongUrl")
                         .IsUnique();
 
-                    b.ToTable("ShortendUrls");
+                    b.ToTable("ShortendUrls", (string)null);
                 });
 #pragma warning restore 612, 618
         }
