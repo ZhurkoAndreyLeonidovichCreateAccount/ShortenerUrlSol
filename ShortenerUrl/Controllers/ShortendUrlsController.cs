@@ -29,7 +29,10 @@ namespace ShortenerUrlBLL.Controllers
             return View(allShortendUrlView);
         }
 
-        
+        public void Main()
+        {
+
+        }
 
         // GET: ShortendUrls/CreateAsync
         public IActionResult Create()
