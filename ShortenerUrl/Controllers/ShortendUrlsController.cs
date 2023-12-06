@@ -66,6 +66,10 @@ namespace ShortenerUrlBLL.Controllers
             return View(shortendUrl);
         }
 
+        public void gitSmart()
+        {
+
+        }
         // POST: ShortendUrls/Edit/5
         
         [HttpPost]
