@@ -31,7 +31,7 @@ namespace ShortenerUrlBLL.Controllers
 
         public void Main()
         {
-            string t = "";
+
         }
 
         // GET: ShortendUrls/CreateAsync
