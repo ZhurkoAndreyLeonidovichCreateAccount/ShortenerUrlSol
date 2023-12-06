@@ -66,7 +66,6 @@ namespace ShortenerUrlBLL.Controllers
             return View(shortendUrl);
         }
 
-        public void Empty() { }
         // POST: ShortendUrls/Edit/5
         
         [HttpPost]
